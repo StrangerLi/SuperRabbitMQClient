@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using SuperRabbitMQClient.AssemblyHelper;
+using SuperRabbitMQClient.Command;
 
-namespace SuperRabbitMQClient
+namespace SuperRabbitMQClient.RabbitMQClient
 {
-    public abstract class RabbitMQClientBase<TRabbitMQCommand> : IRabbitMQClient<TRabbitMQCommand>
+    public  class RabbitMQClientBase<TRabbitMQCommand> : IRabbitMQClient<TRabbitMQCommand>
           where TRabbitMQCommand : IRabbitMQCommand
     {
         public RabbitMQClientBase()
@@ -34,7 +35,13 @@ namespace SuperRabbitMQClient
         /// 客户端名称
         /// <para>该名称需在作用域内唯一</para>
         /// </summary>
-        public virtual string Name { get; }
+        public virtual string Name
+        {
+            get
+            {
+                return this.GetType().Name;
+            }
+        }
 
         #region 配置项
         /// <summary>

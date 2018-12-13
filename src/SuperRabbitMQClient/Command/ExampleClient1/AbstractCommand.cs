@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperRabbitMQClient.RabbitMQClient
+namespace SuperRabbitMQClient.Command.ExampleClient1
 {
-    class dd
+    public abstract class AbstractCommand : CommandBase
     {
     }
 }

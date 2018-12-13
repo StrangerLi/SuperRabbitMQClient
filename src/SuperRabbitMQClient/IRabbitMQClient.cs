@@ -5,7 +5,9 @@ using System.Text;
 
 namespace SuperRabbitMQClient
 {
-    public interface IRabbitMQClient<TRabbitMQCommand> : IDisposable
+    public interface IRabbitMQClient
+    { }
+    public interface IRabbitMQClient<TRabbitMQCommand> : IRabbitMQClient,  IDisposable
         where TRabbitMQCommand:IRabbitMQCommand
     {
         /// <summary>
