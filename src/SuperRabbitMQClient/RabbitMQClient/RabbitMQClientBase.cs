@@ -413,7 +413,7 @@ namespace SuperRabbitMQClient.RabbitMQClient
         {
             if (encoding == null)
             {
-                return;
+                return false ;
             }
             return SendMessage(ExchangeName, RouteKey, encoding.GetBytes(Message));
         }

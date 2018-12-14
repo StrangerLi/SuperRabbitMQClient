@@ -17,7 +17,7 @@ namespace SuperRabbitMQClient.Command.ExampleClient1
         {
             get
             {
-                return "WMS_Qu";
+                return "DemoCommand";
             }
         }
 
@@ -30,6 +30,7 @@ namespace SuperRabbitMQClient.Command.ExampleClient1
         public override void Queue_Received(object sender, IModel channel, BasicDeliverEventArgs e)
         {
             //throw new NotImplementedException();
+            Console.WriteLine("Client1");
         }
 
         /// <summary>
