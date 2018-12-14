@@ -13,7 +13,7 @@ using SuperRabbitMQClient.Command;
 
 namespace SuperRabbitMQClient.RabbitMQClient
 {
-    public  class RabbitMQClientBase<TRabbitMQCommand> : IRabbitMQClient<TRabbitMQCommand>
+    public abstract  class RabbitMQClientBase<TRabbitMQCommand> : IRabbitMQClient
           where TRabbitMQCommand : IRabbitMQCommand
     {
         public RabbitMQClientBase()
@@ -218,7 +218,8 @@ namespace SuperRabbitMQClient.RabbitMQClient
         /// <summary>
         /// 命令成员实例集合
         /// </summary>
-        public ConcurrentDictionary<string, TRabbitMQCommand> Commands { get; protected set; }
+        public ConcurrentDictionary<string, IRabbitMQCommand> Commands { get; protected set; }
+
         #endregion
 
         /// <summary>
@@ -301,7 +302,7 @@ namespace SuperRabbitMQClient.RabbitMQClient
                     }
 
                     var m_Models = new ConcurrentDictionary<string, IModel>();
-                    foreach (KeyValuePair<string, TRabbitMQCommand> Command in Commands)
+                    foreach (var Command in Commands)
                     {
                         if (m_Models.ContainsKey(Command.Key))
                         {
@@ -445,7 +446,7 @@ namespace SuperRabbitMQClient.RabbitMQClient
             //向程序集中添加元素
             commandAssemblies.Add(GetType().Assembly);
             //定义返回接过
-            var outputCommands = new ConcurrentDictionary<string, TRabbitMQCommand>();
+            var outputCommands = new ConcurrentDictionary<string, IRabbitMQCommand>();
             //遍历程序集 集合中的元素，添加类的实例到命令中
             foreach (var assembly in commandAssemblies)
             {

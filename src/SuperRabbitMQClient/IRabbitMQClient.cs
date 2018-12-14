@@ -5,10 +5,7 @@ using System.Text;
 
 namespace SuperRabbitMQClient
 {
-    public interface IRabbitMQClient
-    { }
-    public interface IRabbitMQClient<TRabbitMQCommand> : IRabbitMQClient,  IDisposable
-        where TRabbitMQCommand:IRabbitMQCommand
+    public interface IRabbitMQClient: IDisposable
     {
         /// <summary>
         /// 客户端名称
@@ -115,7 +112,7 @@ namespace SuperRabbitMQClient
         /// <summary>
         /// 命令成员实例集合
         /// </summary>
-        ConcurrentDictionary<string, TRabbitMQCommand> Commands { get; }
+        ConcurrentDictionary<string, IRabbitMQCommand> Commands { get; }
         #endregion
 
         /// <summary>

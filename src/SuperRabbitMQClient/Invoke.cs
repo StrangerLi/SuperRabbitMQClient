@@ -31,12 +31,11 @@ namespace SuperRabbitMQClient
             //向程序集中添加元素
             commandAssemblies.Add(GetType().Assembly);
             //定义返回接过
-            var outputCommands = new ConcurrentDictionary<string, IRabbitMQClient<IRabbitMQCommand>>();
-            outputCommands.TryAdd("", new RabbitMQClientBase<AbstractCommand>());
+            var outputCommands = new ConcurrentDictionary<string, IRabbitMQClient>();
             //遍历程序集 集合中的元素，添加类的实例到命令中
             foreach (var assembly in commandAssemblies)
             {
-                foreach (var item in assembly.GetImplementedObjectsByInterface<IRabbitMQClient<IRabbitMQCommand>>())
+                foreach (var item in assembly.GetImplementedObjectsByInterface<IRabbitMQClient>())
                 {
                     if (!outputCommands.TryAdd(item.Name, item))
                     {
