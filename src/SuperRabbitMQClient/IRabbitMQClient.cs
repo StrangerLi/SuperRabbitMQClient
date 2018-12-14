@@ -124,10 +124,6 @@ namespace SuperRabbitMQClient
         /// 关闭RabbitMQClient连接
         /// </summary>
         void Close();
-        ///// <summary>
-        ///// 重置RabbitMQClient连接
-        ///// </summary>
-        //void Reset();
 
         /// <summary>
         /// 开启监听队列
@@ -139,11 +135,6 @@ namespace SuperRabbitMQClient
         /// </summary>
         /// <returns></returns>
         void CloseQueueListen();
-        ///// <summary>
-        ///// 重置队列监听
-        ///// </summary>
-        ///// <returns></returns>
-        //bool ResetQueueListen();
 
         /// <summary>
         /// 发送消息

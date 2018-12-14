@@ -258,16 +258,6 @@ namespace SuperRabbitMQClient.RabbitMQClient
                 Connection = null;
             }
         }
-        ///// <summary>
-        ///// 重置RabbitMQClient连接
-        ///// </summary>
-        //public virtual void Reset()
-        //{
-        //    //Close();
-        //    //this.ConnectionFactory = null;
-        //    //this.Connection = null;
-        //    //this.Commands = null;
-        //}
 
         /// <summary>
         /// 开启监听队列
@@ -280,7 +270,7 @@ namespace SuperRabbitMQClient.RabbitMQClient
                 if (!IsListening)
                 {
                     //校验命令列表
-                    if (Commands == null || Commands.Count > 0)
+                    if (Commands == null || Commands.Count == 0)
                     {
                         //尝试加载命令
                         LoadCommand();
@@ -355,14 +345,6 @@ namespace SuperRabbitMQClient.RabbitMQClient
                 Commands = null;
             }
         }
-        ///// <summary>
-        ///// 重置队列监听
-        ///// </summary>
-        ///// <returns></returns>
-        //public virtual bool ResetQueueListen()
-        //{
-        //    return false;
-        //}
 
         /// <summary>
         /// 发送消息

@@ -10,8 +10,8 @@ namespace SuperRabbitMQClient.Test
     {
         public static void Main()
         {
-            Invoke invoked = new Invoke();
-            invoked.LoadClient();
+            Invoke invoked = Invoke.GetInstance();
+            invoked.Start();
             Console.ReadLine();
         }
     }

@@ -17,7 +17,7 @@ namespace SuperRabbitMQClient.Command.ExampleClient1
         {
             get
             {
-                return "ZZSM.WH1.WMS.CMD";
+                return "WMS_Qu";
             }
         }
 
@@ -29,7 +29,7 @@ namespace SuperRabbitMQClient.Command.ExampleClient1
         /// <param name="e"></param>
         public override void Queue_Received(object sender, IModel channel, BasicDeliverEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
