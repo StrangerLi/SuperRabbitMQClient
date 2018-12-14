@@ -352,26 +352,28 @@ namespace SuperRabbitMQClient.RabbitMQClient
         /// <param name="ExchangeName"></param>
         /// <param name="RouteKey"></param>
         /// <param name="model"></param>
-        public virtual void SendMessage(string ExchangeName, string RouteKey, byte[] bytes)
+        public virtual bool SendMessage(string ExchangeName, string RouteKey, byte[] bytes)
         {
             //当ExchangeName为Null或者Empty时，方法返回
             //ExchangeName不允许为空
             if (string.IsNullOrEmpty(ExchangeName))
             {
-                return;
+                return false;
             }
             //要发送的字节数组不允许为空
             if (bytes == null || bytes.Length == 0)
             {
-                return;
+                return false;
             }
             if (IsOpen)
             {
                 using (var Temp_Model = Connection.CreateModel())
                 {
                     Temp_Model.BasicPublish(ExchangeName,RouteKey,null, bytes);
+                    return true;
                 }
             }
+            return false;
         }
         /// <summary>
         /// 发送发消息
@@ -381,12 +383,12 @@ namespace SuperRabbitMQClient.RabbitMQClient
         /// <param name="model"></param>
         /// <param name="offset"></param>
         /// <param name="count"></param>
-        public virtual void SendMessage(string ExchangeName, string RouteKey, byte[] bytes, int offset, int count)
+        public virtual bool SendMessage(string ExchangeName, string RouteKey, byte[] bytes, int offset, int count)
         {
             using (var temp_steam = new MemoryStream())
             {
                 temp_steam.Write(bytes, offset, count);
-                SendMessage(ExchangeName, RouteKey, temp_steam.GetBuffer());
+                return SendMessage(ExchangeName, RouteKey, temp_steam.GetBuffer());
             }
         }
         /// <summary>
@@ -396,9 +398,9 @@ namespace SuperRabbitMQClient.RabbitMQClient
         /// <param name="ExchangeName"></param>
         /// <param name="RouteKey"></param>
         /// <param name="Message"></param>
-        public virtual void SendMessage(string ExchangeName, string RouteKey, string Message)
+        public virtual bool SendMessage(string ExchangeName, string RouteKey, string Message)
         {
-            SendMessage(ExchangeName,RouteKey,Encoding.UTF8.GetBytes(Message));
+            return SendMessage(ExchangeName,RouteKey,Encoding.UTF8.GetBytes(Message));
         }
         /// <summary>
         /// 发送消息
@@ -407,13 +409,13 @@ namespace SuperRabbitMQClient.RabbitMQClient
         /// <param name="RouteKey"></param>
         /// <param name="Message"></param>
         /// <param name="encoding"></param>
-        public virtual void SendMessage(string ExchangeName, string RouteKey, string Message, Encoding encoding)
+        public virtual bool SendMessage(string ExchangeName, string RouteKey, string Message, Encoding encoding)
         {
             if (encoding == null)
             {
                 return;
             }
-            SendMessage(ExchangeName, RouteKey, encoding.GetBytes(Message));
+            return SendMessage(ExchangeName, RouteKey, encoding.GetBytes(Message));
         }
         /// <summary>
         /// 加载命令集合

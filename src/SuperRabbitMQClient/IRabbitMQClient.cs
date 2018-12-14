@@ -142,7 +142,7 @@ namespace SuperRabbitMQClient
         /// <param name="ExchangeName"></param>
         /// <param name="RouteKey"></param>
         /// <param name="model"></param>
-        void SendMessage(string ExchangeName, string RouteKey, byte[] model);
+        bool SendMessage(string ExchangeName, string RouteKey, byte[] model);
         /// <summary>
         /// 发送发消息
         /// </summary>
@@ -151,14 +151,14 @@ namespace SuperRabbitMQClient
         /// <param name="model"></param>
         /// <param name="offset"></param>
         /// <param name="count"></param>
-        void SendMessage(string ExchangeName, string RouteKey, byte[] model, int offset, int count);
+        bool SendMessage(string ExchangeName, string RouteKey, byte[] model, int offset, int count);
         /// <summary>
         /// 发送消息
         /// </summary>
         /// <param name="ExchangeName"></param>
         /// <param name="RouteKey"></param>
         /// <param name="Message"></param>
-        void SendMessage(string ExchangeName, string RouteKey, string Message);
+        bool SendMessage(string ExchangeName, string RouteKey, string Message);
         /// <summary>
         /// 发送消息
         /// </summary>
@@ -166,6 +166,6 @@ namespace SuperRabbitMQClient
         /// <param name="RouteKey"></param>
         /// <param name="Message"></param>
         /// <param name="encoding"></param>
-        void SendMessage(string ExchangeName, string RouteKey, string Message, Encoding encoding);
+        bool SendMessage(string ExchangeName, string RouteKey, string Message, Encoding encoding);
     }
 }

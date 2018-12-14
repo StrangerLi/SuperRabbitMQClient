@@ -3,12 +3,12 @@ using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace SuperRabbitMQClient.Command.ExampleClient1
+namespace SuperRabbitMQClient.Command.ExampleClient2
 {
     /// <summary>
     /// ZZSM_WH1_WMS_CMD
     /// </summary>
-    public class ZZSM_WH1_WMS_CMD : AbstractCommand
+    public class DemoCommand : AbstractCommand
     {
         /// <summary>
         /// 命令名：默认为当前类名
@@ -17,7 +17,7 @@ namespace SuperRabbitMQClient.Command.ExampleClient1
         {
             get
             {
-                return "WMS_Qu";
+                return "DemoCommand";
             }
         }
 
