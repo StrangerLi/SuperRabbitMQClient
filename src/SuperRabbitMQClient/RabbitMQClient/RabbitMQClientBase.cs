@@ -369,7 +369,7 @@ namespace SuperRabbitMQClient.RabbitMQClient
             {
                 using (var Temp_Model = Connection.CreateModel())
                 {
-                    Temp_Model.BasicPublish(ExchangeName,RouteKey,null, bytes);
+                    Temp_Model.BasicPublish(ExchangeName, RouteKey, null, bytes);
                     return true;
                 }
             }

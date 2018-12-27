@@ -10,7 +10,7 @@ namespace SuperRabbitMQClient.Test
     {
         public static void Main()
         {
-            Invoke invoked = Invoke.GetInstance();
+            RabbitMQClientPoolBase invoked = RabbitMQClientPool.GetInstance();
             invoked.Start();
             Console.ReadLine();
         }
