@@ -24,7 +24,7 @@ namespace SuperRabbitMQClient.Command
         /// <summary>
         /// 当前队列接收器，允许的最大未确认消息量
         /// </summary>
-        public uint PrefetchSize
+        public virtual uint PrefetchSize
         {
             get
             {
@@ -35,7 +35,7 @@ namespace SuperRabbitMQClient.Command
         /// <summary>
         /// 当前队列接收器，允许的最大并发消息量
         /// </summary>
-        public ushort PrefetchCount
+        public virtual ushort PrefetchCount
         {
             get
             {
@@ -46,7 +46,7 @@ namespace SuperRabbitMQClient.Command
         /// <summary>
         /// 是否自动进行消息确认
         /// </summary>
-        public bool AutoAck
+        public virtual bool AutoAck
         {
             get
             {
