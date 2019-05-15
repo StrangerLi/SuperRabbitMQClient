@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.2.1</Version>
+    <Authors>Stranger·Li</Authors>
+    <Description>一个简单的、易用的RabbitMQ客户端</Description>
+    <PackageProjectUrl>https://github.com/StrangerLi/SuperRabbitMQClient</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/StrangerLi/SuperRabbitMQClient</RepositoryUrl>
+    <PackageReleaseNotes>迁移项目到.net standard</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
