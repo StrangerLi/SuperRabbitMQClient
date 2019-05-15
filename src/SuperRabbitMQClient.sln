@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRabbitMQClient", "SuperRabbitMQClient\SuperRabbitMQClient.csproj", "{3FC4E673-4509-4343-A469-8F556422F0D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperRabbitMQClient", "SuperRabbitMQClient\SuperRabbitMQClient.csproj", "{808D4917-4C2F-46BA-9A8D-F40ED8300FA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3FC4E673-4509-4343-A469-8F556422F0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FC4E673-4509-4343-A469-8F556422F0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FC4E673-4509-4343-A469-8F556422F0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FC4E673-4509-4343-A469-8F556422F0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{808D4917-4C2F-46BA-9A8D-F40ED8300FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{808D4917-4C2F-46BA-9A8D-F40ED8300FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{808D4917-4C2F-46BA-9A8D-F40ED8300FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{808D4917-4C2F-46BA-9A8D-F40ED8300FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
